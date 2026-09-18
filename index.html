@@ -5,10 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>供应链库存管理系统</title>
   <meta name="description" content="SCM / WMS 库存看板改版原型" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <p>Loading app.js… open locally if assets fail.</p>
+  <a class="skip" href="#main">跳到内容</a>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><strong>供应链库存管理系统</strong><em>SCM / WMS</em></div>
+      <div class="status">
+        <span class="ok"><i></i>数据可用</span>
+        <span class="sep">·</span>
+        <span>美欧 2026-09-18</span>
+        <span class="sep">·</span>
+        <span>领星 09-19 01:03</span>
+      </div>
+      <div class="top-actions">
+        <button class="btn primary" type="button" id="btnRefresh">刷新</button>
+        <button class="btn" type="button" id="btnExport">导出</button>
+      </div>
+    </header>
+    <aside class="sidebar">
+      <div class="nav-label">库存管理</div>
+      <button class="nav-item active" data-page="board"><span>库存看板</span></button>
+      <button class="nav-item" data-page="sku"><span>SKU 库存明细</span><span class="count">229</span></button>
+      <button class="nav-item" data-page="age"><span>高库龄预警</span><span class="count">29</span></button>
+      <div class="nav-label">到货管理</div>
+      <button class="nav-item" data-page="inbound"><span>SKU 到货看板</span><span class="count">179</span></button>
+      <button class="nav-item" data-page="lots"><span>到货批次明细</span><span class="count">2,995</span></button>
+      <div class="nav-label">销售</div>
+      <button class="nav-item" data-page="sales"><span>目标完成 / 日报</span></button>
+      <div class="nav-label">系统</div>
+      <button class="nav-item" data-page="help"><span>帮助</span></button>
+    </aside>
+    <main class="main" id="main">
+      <section class="page on" id="page-board"></section>
+      <section class="page" id="page-sku"></section>
+      <section class="page" id="page-age"></section>
+      <section class="page" id="page-inbound"></section>
+      <section class="page" id="page-lots"></section>
+      <section class="page" id="page-sales"></section>
+      <section class="page" id="page-help"></section>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
   <script src="app.js"></script>
 </body>
 </html>
