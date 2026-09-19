@@ -2,7 +2,8 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#16191f" />
   <title>供应链库存管理系统</title>
   <meta name="description" content="SCM / WMS 库存看板改版原型" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,6 +15,9 @@
   <a class="skip" href="#main">跳到内容</a>
   <div class="app">
     <header class="topbar">
+      <div class="top-actions">
+        <button class="menu-btn" type="button" id="menuBtn" aria-label="打开菜单">菜单</button>
+      </div>
       <div class="brand"><strong>供应链库存管理系统</strong><em>SCM / WMS</em></div>
       <div class="status">
         <span class="ok"><i></i>数据可用</span>
@@ -27,6 +31,7 @@
         <button class="btn" type="button" id="btnExport">导出</button>
       </div>
     </header>
+    <div class="scrim" id="scrim"></div>
     <aside class="sidebar">
       <div class="nav-label">库存管理</div>
       <button class="nav-item active" data-page="board"><span>库存看板</span></button>
